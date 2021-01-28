@@ -2,6 +2,10 @@
 build:
 	CGO_ENABLED=0 go build -o ./myapp ./cmd/myapp
 
+.PHONY: build-linux
+build-linux:
+	CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -o ./myapp_linux ./cmd/myapp
+
 .PHONY: test
 test:
 	go test ./...
@@ -25,4 +29,4 @@ lint:
 
 .PHONY: clean
 clean:
-	rm ./myapp
+	rm ./myapp ./myapp_linux coverage.out

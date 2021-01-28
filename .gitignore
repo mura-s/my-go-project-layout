@@ -3,6 +3,7 @@
 
 # Binaries
 myapp
+myapp_linux
 
 # Output of the go coverage tool
 *.out
