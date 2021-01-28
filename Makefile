@@ -29,4 +29,4 @@ lint:
 
 .PHONY: clean
 clean:
-	rm ./myapp coverage.out
+	rm ./myapp ./coverage.out
