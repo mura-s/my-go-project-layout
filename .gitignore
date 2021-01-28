@@ -2,7 +2,7 @@
 .DS_Store
 
 # Binaries
-bin/myapp
+myapp
 
 # Output of the go coverage tool
 *.out

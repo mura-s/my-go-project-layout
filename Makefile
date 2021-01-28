@@ -1,6 +1,6 @@
 .PHONY: build
 build:
-	CGO_ENABLED=0 go build -o ./bin/myapp ./cmd/myapp
+	CGO_ENABLED=0 go build -o ./myapp ./cmd/myapp
 
 .PHONY: test
 test:
@@ -25,4 +25,4 @@ lint:
 
 .PHONY: clean
 clean:
-	rm ./bin/myapp
+	rm ./myapp
