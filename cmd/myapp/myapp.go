@@ -13,7 +13,7 @@ func main() {
 		Use:   "myapp",
 		Short: "Sample app for my Go project layout",
 	}
-	rootCmd.AddCommand(cmd.NewRepeatCommand())
+		rootCmd.AddCommand(cmd.NewRepeatCommand())
 	rootCmd.AddCommand(cmd.NewVersionCommand())
 
 	if err := rootCmd.Execute(); err != nil {
