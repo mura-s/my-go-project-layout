@@ -1,4 +1,4 @@
 FROM alpine
 
-COPY myapp_linux /usr/bin/myapp
-CMD ["myapp"]
+COPY myapp /usr/local/bin/
+ENTRYPOINT ["myapp"]

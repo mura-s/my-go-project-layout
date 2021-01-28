@@ -1,0 +1,19 @@
+before:
+  hooks:
+    - go mod tidy
+builds:
+  - main: ./cmd/myapp
+    binary: myapp
+    goos:
+      - linux
+      - darwin
+    goarch:
+      - amd64
+      - arm64
+    env:
+      - CGO_ENABLED=0
+    ldflags: -s -w -X github.com/mura-s/my-go-project-layout/pkg/cmd.version={{.Version}} -X github.com/mura-s/my-go-project-layout/pkg/cmd.commit={{.ShortCommit}} -X github.com/mura-s/my-go-project-layout/pkg/cmd.date={{.Date}}
+checksum:
+  name_template: "checksums.txt"
+snapshot:
+  name_template: "{{ .Tag }}-next"

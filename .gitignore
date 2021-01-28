@@ -10,3 +10,6 @@ myapp_linux
 
 # Dependency directories
 vendor/
+
+# GoReleaser
+dist/

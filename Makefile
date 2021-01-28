@@ -4,7 +4,7 @@ build:
 
 .PHONY: build-linux
 build-linux:
-	CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -o ./myapp_linux ./cmd/myapp
+	CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -o ./myapp ./cmd/myapp
 
 .PHONY: test
 test:
@@ -29,4 +29,4 @@ lint:
 
 .PHONY: clean
 clean:
-	rm ./myapp ./myapp_linux coverage.out
+	rm ./myapp coverage.out
