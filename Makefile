@@ -1,6 +1,6 @@
 .PHONY: build
 build:
-	go build -o ./bin/myapp ./cmd/myapp
+	CGO_ENABLED=0 go build -o ./bin/myapp ./cmd/myapp
 
 .PHONY: test
 test:
