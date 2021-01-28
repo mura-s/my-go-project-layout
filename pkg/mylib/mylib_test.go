@@ -1,6 +1,7 @@
 package mylib
 
 import (
+	"sort"
 	"testing"
 
 	"github.com/stretchr/testify/assert"
@@ -8,18 +9,37 @@ import (
 
 func TestAdd(t *testing.T) {
 	cases := []struct {
-		desc string
-		a    int
-		b    int
-		out  int
+		desc  string
+		s     string
+		times int
+		out   string
 	}{
-		{"pos + pos", 1, 1, 2},
-		{"neg + neg", -1, -1, -2},
+		{"empty", "", 2, ""},
+		{"2 x 2", "ab", 2, "abab"},
 	}
 
 	for _, c := range cases {
 		t.Run(c.desc, func(t *testing.T) {
-			assert.Equal(t, c.out, Add(c.a, c.b))
+			assert.Equal(t, c.out, Repeat(c.s, c.times))
+		})
+	}
+}
+
+func TestUnique(t *testing.T) {
+	cases := []struct {
+		desc string
+		in   []string
+		out  []string
+	}{
+		{"no dup", []string{"c", "a", "b"}, []string{"a", "b", "c"}},
+		{"dup", []string{"c", "a", "b", "c"}, []string{"a", "b", "c"}},
+	}
+
+	for _, c := range cases {
+		t.Run(c.desc, func(t *testing.T) {
+			actual := Unique(c.in)
+			sort.Strings(actual)
+			assert.Equal(t, c.out, actual)
 		})
 	}
 }

@@ -1,7 +1,22 @@
 package main
 
-import "github.com/mura-s/my-go-project-layout/pkg/myapp"
+import (
+	"fmt"
+	"os"
+
+	"github.com/mura-s/my-go-project-layout/pkg/cmd"
+	"github.com/spf13/cobra"
+)
 
 func main() {
-	myapp.Run()
+	rootCmd := &cobra.Command{
+		Use:   "myapp",
+		Short: "Sample app for my Go project layout",
+	}
+	rootCmd.AddCommand(cmd.NewRepeatCommand())
+
+	if err := rootCmd.Execute(); err != nil {
+		fmt.Fprintln(os.Stderr, err)
+		os.Exit(1)
+	}
 }

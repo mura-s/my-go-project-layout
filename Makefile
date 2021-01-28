@@ -23,10 +23,6 @@ fmt:
 lint:
 	golangci-lint run ./...
 
-.PHONY: run
-run:
-	./bin/myapp
-
 .PHONY: clean
 clean:
 	rm ./bin/myapp
