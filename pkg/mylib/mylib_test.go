@@ -33,6 +33,7 @@ func TestUnique(t *testing.T) {
 	}{
 		{"no dup", []string{"c", "a", "b"}, []string{"a", "b", "c"}},
 		{"dup", []string{"c", "a", "b", "c"}, []string{"a", "b", "c"}},
+		{"empty", []string{"", ""}, []string{""}},
 	}
 
 	for _, c := range cases {
