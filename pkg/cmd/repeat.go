@@ -26,7 +26,7 @@ func NewRepeatCommand() *cobra.Command {
 
 func (rc *repeatCommand) run(_ *cobra.Command, args []string) error {
 	if len(args) > 1 {
-		return errors.New("invalid args len")
+		return errors.New("invalid args len (> 1)")
 	}
 	fmt.Println(mylib.Repeat(args[0], rc.count))
 	return nil
