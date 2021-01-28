@@ -15,6 +15,7 @@ func TestAdd(t *testing.T) {
 		out   string
 	}{
 		{"empty", "", 2, ""},
+		{"1 x 2", "a", 2, "aa"},
 		{"2 x 2", "ab", 2, "abab"},
 	}
 
