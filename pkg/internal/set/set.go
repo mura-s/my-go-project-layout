@@ -1,7 +1,7 @@
 package set
 
-type stringSet map[string]struct{}
+type StringSet map[string]struct{}
 
-func NewStringSet() stringSet {
-	return stringSet{}
+func NewStringSet() StringSet {
+	return StringSet{}
 }
