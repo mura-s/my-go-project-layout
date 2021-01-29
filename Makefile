@@ -1,3 +1,6 @@
+.PHONY: all
+all: deps fmt lint build coverage
+
 .PHONY: build
 build:
 	CGO_ENABLED=0 go build -o ./myapp ./cmd/myapp
