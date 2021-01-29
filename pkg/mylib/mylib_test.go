@@ -53,7 +53,7 @@ func TestAdd(t *testing.T) {
 		b    int
 		out  int
 	}{
-		{"plus + plus", 1, 2, 4},
+		{"plus + plus", 1, 2, 3},
 		{"minus + minus", -1, -2, -3},
 	}
 
