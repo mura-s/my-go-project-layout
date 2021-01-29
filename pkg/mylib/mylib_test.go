@@ -7,7 +7,7 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
-func TestAdd(t *testing.T) {
+func TestRepeat(t *testing.T) {
 	cases := []struct {
 		desc  string
 		s     string
@@ -42,6 +42,24 @@ func TestUnique(t *testing.T) {
 			actual := Unique(c.in)
 			sort.Strings(actual)
 			assert.Equal(t, c.out, actual)
+		})
+	}
+}
+
+func TestAdd(t *testing.T) {
+	cases := []struct {
+		desc string
+		a    int
+		b    int
+		out  int
+	}{
+		{"plus + plus", 1, 2, 4},
+		{"minus + minus", -1, -2, -3},
+	}
+
+	for _, c := range cases {
+		t.Run(c.desc, func(t *testing.T) {
+			assert.Equal(t, c.out, Add(c.a, c.b))
 		})
 	}
 }

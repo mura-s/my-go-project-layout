@@ -24,3 +24,7 @@ func Unique(ss []string) []string {
 	}
 	return result
 }
+
+func Add(a, b int) int {
+	return a + b
+}
